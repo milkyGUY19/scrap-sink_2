@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://ppyi0yg5n1c4"]
+
+[ext_resource type="Texture2D" uid="uid://ehb2q1sasadq" path="res://assets/mrtvola.png" id="1_splb3"]
+[ext_resource type="Script" uid="uid://dbtfvt705jpjg" path="res://broken_sub.gd" id="2_ymd2f"]
+[ext_resource type="FontFile" uid="uid://cxknwea7xsam7" path="res://assets/Peaberry-Base.otf" id="3_qdfcv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nr8wp"]
+radius = 19.238482
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2bti"]
+height = 43.60498
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flf07"]
+size = Vector2(10.769226, 9.801041)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_splb3"]
+radius = 78.24009
+height = 211.61966
+
+[node name="BrokenSub" type="Sprite2D" unique_id=647885702]
+texture_filter = 1
+scale = Vector2(2.674611, 3.0419204)
+texture = ExtResource("1_splb3")
+script = ExtResource("2_ymd2f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1803327915]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=657628344]
+position = Vector2(-34.615383, 2.1780097)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_nr8wp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=371098937]
+position = Vector2(28.461496, 7.6230335)
+rotation = 1.0210177
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("CapsuleShape2D_d2bti")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=827346381]
+position = Vector2(-6.1538844, 13.612562)
+rotation = 0.7853982
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_ta5nu")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=673894136]
+position = Vector2(-27.692322, -21.235596)
+scale = Vector2(0.9999996, 0.9999995)
+shape = SubResource("RectangleShape2D_flf07")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=629142862]
+
+[node name="Radius" type="CollisionShape2D" parent="Area2D" unique_id=1481107360]
+position = Vector2(0.37388563, -0.3287506)
+rotation = 1.5707964
+scale = Vector2(0.99999964, 0.9999996)
+shape = SubResource("CapsuleShape2D_splb3")
+
+[node name="PressF" type="Label" parent="." unique_id=1479813936]
+visible = false
+texture_filter = 1
+offset_left = -85.99381
+offset_top = -48.324734
+offset_right = 96.00619
+offset_bottom = -25.324734
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_qdfcv")
+theme_override_font_sizes/font_size = 10
+text = "PRESS F TO PAY RESPECT "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
