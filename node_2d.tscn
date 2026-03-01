@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://d35jw5gntvt6o"]
 
-[ext_resource type="Script" uid="uid://c2k4nlfm1ickc" path="res://world.gd" id="1_d2bti"]
 [ext_resource type="PackedScene" uid="uid://bevfu6s8faeyw" path="res://submarine.tscn" id="1_epypp"]
-[ext_resource type="PackedScene" uid="uid://c2d60jpfkvfe5" path="res://scenes/boat.tscn" id="1_hqns4"]
+[ext_resource type="PackedScene" uid="uid://c2d60jpfkvfe5" path="res://boat.tscn" id="1_hqns4"]
 [ext_resource type="Script" uid="uid://dltbtbdqc0y5u" path="res://scripts/PlayerUI.gd" id="3_zzz"]
 [ext_resource type="FontFile" uid="uid://cxknwea7xsam7" path="res://assets/Peaberry-Base.otf" id="4_0hol4"]
 [ext_resource type="Script" uid="uid://b12xr4s5tjflq" path="res://pause_panel.gd" id="4_d21ai"]
@@ -11,10 +10,7 @@
 [ext_resource type="Script" uid="uid://clc3t1bslvo6h" path="res://scripts/audio_manager.gd" id="7_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://bfi7xr7lncpqn" path="res://scenes/wave.tscn" id="10_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://bkfyhxwualuhg" path="res://assets/mrak.png" id="12_x0ka3"]
-[ext_resource type="PackedScene" uid="uid://ppyi0yg5n1c4" path="res://broken_sub.tscn" id="13_nr8wp"]
 [ext_resource type="PackedScene" uid="uid://b8wpx0d677ir3" path="res://scenes/SpeedBoostSubmarine.tscn" id="13_trader"]
-[ext_resource type="Script" uid="uid://drq2fx8rwk7el" path="res://scripts/BackgroundManager.gd" id="14_bgmgr"]
-[ext_resource type="Texture2D" uid="uid://og3h3ejw0j2" path="res://assets/Rasa.png" id="14_d2bti"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
 bg_color = Color(0, 0.27, 0.43, 0.75)
@@ -129,138 +125,15 @@ normal = Vector2(0, 1)
 distance = -1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nr8wp"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.09019608, 0.5529412, 0.77254903, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2bti"]
+bg_color = Color(0.09320182, 0.5526029, 0.7723388, 0.437)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ta5nu"]
 bg_color = Color(0.38372943, 0.80103385, 0.99999994, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2bti"]
-bg_color = Color(1, 1, 1, 0.558)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oceanfloor"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ta5nu"]
-atlas = ExtResource("14_d2bti")
-region = Rect2(0, 0, 21, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_flf07"]
-atlas = ExtResource("14_d2bti")
-region = Rect2(0, 64, 21, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_k73cj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ta5nu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_flf07")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_flf07"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_flf07")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ta5nu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rjqkl"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ta5nu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_flf07")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fs4d3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_flf07")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ta5nu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7vxoj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ta5nu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_flf07")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nr8wp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_flf07")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ta5nu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_d2bti"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ta5nu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_flf07")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ta5nu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_flf07")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ta5nu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
-
 [node name="World" type="Node2D" unique_id=908213786]
-script = ExtResource("1_d2bti")
 
 [node name="Boat" parent="." unique_id=1731922496 instance=ExtResource("1_hqns4")]
 position = Vector2(214, 282)
@@ -757,11 +630,10 @@ anchor_bottom = 0.5
 offset_left = -3.0
 offset_top = 330.0
 offset_right = 2426.0
-offset_bottom = 165000.0
+offset_bottom = 15330.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("14_bgmgr")
 
 [node name="WaterTop" type="Panel" parent="Background" unique_id=238806450]
 show_behind_parent = true
@@ -770,11 +642,23 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 144.0
-offset_bottom = -4855.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nr8wp")
+
+[node name="WaterTopUnderwater" type="Panel" parent="Background" unique_id=1483971753]
+show_behind_parent = true
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d2bti")
 
 [node name="Sky" type="Panel" parent="Background" unique_id=2139525933]
 layout_mode = 0
@@ -835,261 +719,6 @@ texture = ExtResource("12_x0ka3")
 position = Vector2(962.00006, -39)
 scale = Vector2(0.41339874, 0.4423077)
 texture = ExtResource("12_x0ka3")
-
-[node name="WaterTopUnderwater" type="Panel" parent="." unique_id=832426152]
-z_index = 10
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -143.0
-offset_top = 323.0
-offset_right = 2683.0
-offset_bottom = 160140.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_d2bti")
-
-[node name="OceanFloor" type="StaticBody2D" parent="." unique_id=314159265]
-position = Vector2(-11, 159996)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OceanFloor" unique_id=314159266]
-shape = SubResource("WorldBoundaryShape2D_oceanfloor")
-
-[node name="BrokenSub" parent="." unique_id=647885702 instance=ExtResource("13_nr8wp")]
-position = Vector2(1432, 159922)
-
-[node name="SeaWeed" type="Node2D" parent="." unique_id=1311327921]
-
-[node name="SeaWeed1" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1844566013]
-texture_filter = 1
-position = Vector2(1907.375, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.07915202
-
-[node name="SeaWeed2" type="AnimatedSprite2D" parent="SeaWeed" unique_id=2395182]
-texture_filter = 1
-position = Vector2(1835.375, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed3" type="AnimatedSprite2D" parent="SeaWeed" unique_id=483225365]
-texture_filter = 1
-position = Vector2(1756.375, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed4" type="AnimatedSprite2D" parent="SeaWeed" unique_id=147334758]
-texture_filter = 1
-position = Vector2(1700.3748, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed5" type="AnimatedSprite2D" parent="SeaWeed" unique_id=2003969703]
-texture_filter = 1
-position = Vector2(1656.375, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed6" type="AnimatedSprite2D" parent="SeaWeed" unique_id=633733662]
-texture_filter = 1
-position = Vector2(483.37494, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed15" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1375959248]
-texture_filter = 1
-position = Vector2(388, 159851)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_flf07")
-
-[node name="SeaWeed16" type="AnimatedSprite2D" parent="SeaWeed" unique_id=234346891]
-texture_filter = 1
-position = Vector2(324.99997, 159851)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_rjqkl")
-
-[node name="SeaWeed17" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1504627779]
-texture_filter = 1
-position = Vector2(284, 159851)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_rjqkl")
-
-[node name="SeaWeed18" type="AnimatedSprite2D" parent="SeaWeed" unique_id=785979739]
-texture_filter = 1
-position = Vector2(212, 159851)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_rjqkl")
-
-[node name="SeaWeed7" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1224406105]
-texture_filter = 1
-position = Vector2(541.37494, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed8" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1283727787]
-texture_filter = 1
-position = Vector2(615.37494, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed9" type="AnimatedSprite2D" parent="SeaWeed" unique_id=876568088]
-texture_filter = 1
-position = Vector2(722.37494, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed10" type="AnimatedSprite2D" parent="SeaWeed" unique_id=848682315]
-texture_filter = 1
-position = Vector2(703.375, 159900.5)
-scale = Vector2(3.9226124, 4.67975)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed19" type="AnimatedSprite2D" parent="SeaWeed" unique_id=659297564]
-texture_filter = 1
-position = Vector2(412.00003, 159901)
-scale = Vector2(3.9226124, 4.67975)
-sprite_frames = SubResource("SpriteFrames_fs4d3")
-
-[node name="SeaWeed20" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1539560888]
-texture_filter = 1
-position = Vector2(190, 159901)
-scale = Vector2(3.9226124, 4.67975)
-sprite_frames = SubResource("SpriteFrames_7vxoj")
-
-[node name="SeaWeed11" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1294309233]
-texture_filter = 1
-position = Vector2(647.37494, 159900.5)
-scale = Vector2(3.9226124, 4.67975)
-sprite_frames = SubResource("SpriteFrames_nr8wp")
-frame_progress = 0.1346499
-
-[node name="SeaWeed12" type="AnimatedSprite2D" parent="SeaWeed" unique_id=338404557]
-texture_filter = 1
-position = Vector2(1814.375, 159900.5)
-scale = Vector2(3.9226124, 4.67975)
-sprite_frames = SubResource("SpriteFrames_d2bti")
-
-[node name="SeaWeed13" type="AnimatedSprite2D" parent="SeaWeed" unique_id=882181882]
-texture_filter = 1
-position = Vector2(2003.3749, 159900.5)
-scale = Vector2(3.9226124, 4.67975)
-sprite_frames = SubResource("SpriteFrames_d2bti")
-
-[node name="SeaWeed14" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1158084465]
-texture_filter = 1
-position = Vector2(1936.3749, 159900.5)
-scale = Vector2(3.9226124, 4.67975)
-sprite_frames = SubResource("SpriteFrames_ta5nu")
-
-[node name="SeaWeed22" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1586938975]
-texture_filter = 1
-position = Vector2(2180.375, 159849.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed23" type="AnimatedSprite2D" parent="SeaWeed" unique_id=2009462133]
-texture_filter = 1
-position = Vector2(2101.375, 159849.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed24" type="AnimatedSprite2D" parent="SeaWeed" unique_id=956712761]
-texture_filter = 1
-position = Vector2(2045.3749, 159849.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed25" type="AnimatedSprite2D" parent="SeaWeed" unique_id=2024841170]
-texture_filter = 1
-position = Vector2(2159.375, 159899.5)
-scale = Vector2(3.9226124, 4.67975)
-sprite_frames = SubResource("SpriteFrames_d2bti")
-
-[node name="SeaWeed21" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1779750242]
-texture_filter = 1
-position = Vector2(779.37494, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed26" type="AnimatedSprite2D" parent="SeaWeed" unique_id=675073394]
-texture_filter = 1
-position = Vector2(837.37494, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed27" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1781533214]
-texture_filter = 1
-position = Vector2(911.37494, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed28" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1361756406]
-texture_filter = 1
-position = Vector2(1018.37494, 159850.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed29" type="AnimatedSprite2D" parent="SeaWeed" unique_id=95383128]
-texture_filter = 1
-position = Vector2(999.375, 159900.5)
-scale = Vector2(3.9226124, 4.67975)
-sprite_frames = SubResource("SpriteFrames_k73cj")
-frame_progress = 0.5127775
-
-[node name="SeaWeed30" type="AnimatedSprite2D" parent="SeaWeed" unique_id=371318345]
-texture_filter = 1
-position = Vector2(943.3749, 159900.5)
-scale = Vector2(3.9226124, 4.67975)
-sprite_frames = SubResource("SpriteFrames_nr8wp")
-frame_progress = 0.1346499
-
-[node name="SeaWeed31" type="AnimatedSprite2D" parent="SeaWeed" unique_id=130216593]
-texture_filter = 1
-position = Vector2(1212.3749, 159851.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_flf07")
-
-[node name="SeaWeed32" type="AnimatedSprite2D" parent="SeaWeed" unique_id=392689352]
-texture_filter = 1
-position = Vector2(1143, 159851.02)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_rjqkl")
-
-[node name="SeaWeed33" type="AnimatedSprite2D" parent="SeaWeed" unique_id=310515474]
-texture_filter = 1
-position = Vector2(1082.1875, 159851.5)
-scale = Vector2(4.226184, 7.0780544)
-sprite_frames = SubResource("SpriteFrames_rjqkl")
-
-[node name="SeaWeed34" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1908345968]
-texture_filter = 1
-position = Vector2(1236.3748, 159901.5)
-scale = Vector2(3.9226124, 4.67975)
-sprite_frames = SubResource("SpriteFrames_fs4d3")
-
-[node name="SeaWeed35" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1750692818]
-texture_filter = 1
-position = Vector2(1060.1874, 159901.5)
-scale = Vector2(3.9226124, 4.67975)
-sprite_frames = SubResource("SpriteFrames_7vxoj")
 
 [connection signal="pressed" from="PlayerUI/Pause/PausePanel/PauseButtons/Continue" to="PlayerUI/Pause/PausePanel" method="_on_continue_pressed"]
 [connection signal="pressed" from="PlayerUI/Pause/PausePanel/PauseButtons/Options" to="PlayerUI/Pause/PausePanel" method="_on_options_pressed"]
