@@ -20,6 +20,7 @@ signal stored_materials_changed(new_amount: int)
 signal inventory_capacity_changed(current: int, max_cap: int)
 signal item_collected(item_name: String, depth_m: float)
 signal completed_trades_changed(new_count: int)
+signal upgrades_changed(speed_mult: float, inv_bonus: int, hp_bonus: int)
 
 # -----------------
 # 2. Proměnné a Setters
@@ -39,6 +40,33 @@ var completed_trades_count: int = 0 : set = set_completed_trades_count
 # -----------------
 var hull_level: int = 1
 var engine_level: int = 1
+
+# -----------------
+# Přežívající data (Persistent across respawns)
+# -----------------
+const SUBMARINE_DEPTHS = [100.0, 200.0, 400.0, 600.0, 900.0, 1200.0]
+
+var completed_submarines: Dictionary = {}
+var bonus_inventory_capacity: int = 0
+var bonus_health_capacity: int = 0
+
+func get_max_allowed_depth() -> float:
+	var target = MAX_GAME_DEPTH
+	for depth in SUBMARINE_DEPTHS:
+		# Hledáme klíče urovnané na hloubku, např. "sub_100", "sub_200"
+		var sub_id = "sub_" + str(int(depth))
+		if not completed_submarines.has(sub_id) and not completed_submarines.has("sub_" + str(depth)):
+			target = depth
+			break
+	return target + 20.0
+
+func emit_upgrades_changed() -> void:
+	upgrades_changed.emit(current_speed_multiplier, bonus_inventory_capacity, bonus_health_capacity)
+
+func register_submarine_complete(sub_id: String) -> void:
+	completed_submarines[sub_id] = true
+	# Vynutí automatický přepočet UI Max Depth, protože přibyla odemknutá ponorka
+	depth_changed.emit(current_depth)
 
 # -----------------
 # 3. Setter Funkce
@@ -109,3 +137,4 @@ func apply_speed_boost(multiplier: float) -> void:
 	# Udržíme si ten nejvyšší možný
 	if multiplier > current_speed_multiplier:
 		current_speed_multiplier = multiplier
+		emit_upgrades_changed()

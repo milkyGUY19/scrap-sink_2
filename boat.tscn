@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2d60jpfkvfe5"]
 
 [ext_resource type="Texture2D" uid="uid://dbbkbgb7kmo86" path="res://assets/lod.png" id="1_annr2"]
-[ext_resource type="Script" uid="uid://b4pws7e3le81d" path="res://scripts/boat.gd" id="1_viw7v"]
+[ext_resource type="Script" uid="uid://b4pws7e3le81d" path="res://boat.gd" id="1_viw7v"]
 [ext_resource type="FontFile" uid="uid://cxknwea7xsam7" path="res://assets/Peaberry-Base.otf" id="3_font"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqns4"]
