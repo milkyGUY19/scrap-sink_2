@@ -173,6 +173,7 @@ size = Vector2(17, 41)
 size = Vector2(18.500002, 17.5)
 
 [node name="SpeedBoostSubmarine" type="StaticBody2D" unique_id=1302135277]
+z_as_relative = false
 script = ExtResource("1_speed")
 
 [node name="DoneLabel" type="Label" parent="." unique_id=891011122]
@@ -193,7 +194,8 @@ modulate = Color(0.56, 0.77, 0.9, 1)
 texture_filter = 1
 scale = Vector2(1.9, 1.9)
 sprite_frames = SubResource("SpriteFrames_trader")
-animation = &"wrecked_static"
+animation = &"repaired_final"
+frame_progress = 0.013894703
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1203516346]
 position = Vector2(8, 10)

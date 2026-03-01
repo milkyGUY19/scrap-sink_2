@@ -25,8 +25,6 @@ func _ready() -> void:
 	add_to_group("player")
 	
 	inventory = Inventory.new()
-	# Přičteme bonusovou kapacitu z předchozích životů/upgradů
-	inventory.max_capacity += GameManager.bonus_inventory_capacity
 	add_child(inventory)
 	
 	# Napojení Floating UI ihned na startu
