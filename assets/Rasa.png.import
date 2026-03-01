@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpga1o050ic4e"
-path="res://.godot/imported/submarine_3.png-f8170bc579be8fd19302ae7c2528d2d5.ctex"
+uid="uid://og3h3ejw0j2"
+path="res://.godot/imported/Rasa.png-67a53d7f9940be1b66546de73bf7a1e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/submarine_3.png"
-dest_files=["res://.godot/imported/submarine_3.png-f8170bc579be8fd19302ae7c2528d2d5.ctex"]
+source_file="res://assets/Rasa.png"
+dest_files=["res://.godot/imported/Rasa.png-67a53d7f9940be1b66546de73bf7a1e9.ctex"]
 
 [params]
 

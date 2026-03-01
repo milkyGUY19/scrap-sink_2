@@ -29,7 +29,7 @@ func update_inventory(items_dict: Dictionary) -> void:
 			# Tady předpokládáme že Icon není prázdné - jinak použijeme fallback barevný obdélník
 			if item_data.icon:
 				icon_rect.texture = item_data.icon
-			icon_rect.custom_minimum_size = Vector2(32, 32)
+			icon_rect.custom_minimum_size = Vector2(20, 20)
 			icon_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 			icon_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 			
@@ -38,7 +38,7 @@ func update_inventory(items_dict: Dictionary) -> void:
 			var label = Label.new()
 			label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			label.text = it_name + " x" + str(amount)
-			label.add_theme_font_size_override("font_size", 24)
+			# label.add_theme_font_size_override("font_size", 14) 
 			
 			slot.add_child(icon_rect)
 			slot.add_child(label)

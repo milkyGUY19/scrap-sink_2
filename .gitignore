@@ -4,7 +4,6 @@
 
 export.cfg
 
-
 # Imported translations (CVS)
 *.csv.import
 
