@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://c2d60jpfkvfe5"]
+
+[ext_resource type="Texture2D" uid="uid://dbbkbgb7kmo86" path="res://assets/lod.png" id="1_annr2"]
+[ext_resource type="Script" uid="uid://b4pws7e3le81d" path="res://scripts/boat.gd" id="1_viw7v"]
+[ext_resource type="FontFile" uid="uid://cxknwea7xsam7" path="res://assets/Peaberry-Base.otf" id="3_font"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqns4"]
+atlas = ExtResource("1_annr2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0ka3"]
+atlas = ExtResource("1_annr2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
+atlas = ExtResource("1_annr2")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
+atlas = ExtResource("1_annr2")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2bti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqns4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0ka3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h7mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr8wp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_annr2"]
+size = Vector2(129.00002, 27)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_henu8"]
+radius = 34.014706
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anwow"]
+size = Vector2(20.000002, 21.5)
+
+[node name="Boat" type="StaticBody2D" unique_id=1731922496]
+input_pickable = true
+script = ExtResource("1_viw7v")
+
+[node name="DoneLabel" type="Label" parent="." unique_id=891011121]
+visible = false
+texture_filter = 1
+offset_left = 20.0
+offset_top = -37.0
+offset_right = 102.0
+offset_bottom = 3.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 25
+text = "DONE"
+horizontal_alignment = 1
+
+[node name="BoatAnimation" type="AnimatedSprite2D" parent="." unique_id=1224758421]
+texture_filter = 1
+position = Vector2(2.3841858e-07, 0)
+scale = Vector2(2.609375, 2.3203125)
+sprite_frames = SubResource("SpriteFrames_d2bti")
+frame_progress = 0.8526552
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087747496]
+position = Vector2(0.49999806, 34.5)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_annr2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1387629633]
+position = Vector2(-12.000001, -12)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("CircleShape2D_henu8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=154342202]
+position = Vector2(-19.000002, -54.25)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_anwow")

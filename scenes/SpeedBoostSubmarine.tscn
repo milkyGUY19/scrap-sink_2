@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://b8wpx0d677ir3"]
+
+[ext_resource type="Script" uid="uid://bw0nuycqum5jc" path="res://scripts/SpeedBoostSubmarine.gd" id="1_speed"]
+[ext_resource type="Texture2D" uid="uid://cpga1o050ic4e" path="res://assets/submarine_3.png" id="2_idle"]
+[ext_resource type="Texture2D" uid="uid://b3rr27b81xtn7" path="res://assets/submarine_rez.png" id="3_sub"]
+[ext_resource type="Texture2D" uid="uid://boc51ej302rna" path="res://assets/submarine_4.png" id="4_final"]
+[ext_resource type="FontFile" uid="uid://cxknwea7xsam7" path="res://assets/Peaberry-Base.otf" id="5_font"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_final1"]
+atlas = ExtResource("4_final")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_final2"]
+atlas = ExtResource("4_final")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_final3"]
+atlas = ExtResource("4_final")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_final4"]
+atlas = ExtResource("4_final")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_final5"]
+atlas = ExtResource("4_final")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_final6"]
+atlas = ExtResource("4_final")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle1"]
+atlas = ExtResource("2_idle")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle2"]
+atlas = ExtResource("2_idle")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle3"]
+atlas = ExtResource("2_idle")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle4"]
+atlas = ExtResource("2_idle")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle5"]
+atlas = ExtResource("2_idle")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle6"]
+atlas = ExtResource("2_idle")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rez1"]
+atlas = ExtResource("3_sub")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rez2"]
+atlas = ExtResource("3_sub")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rez3"]
+atlas = ExtResource("3_sub")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rez4"]
+atlas = ExtResource("3_sub")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rez5"]
+atlas = ExtResource("3_sub")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rez6"]
+atlas = ExtResource("3_sub")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trader"]
+atlas = ExtResource("3_sub")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trader"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_final1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_final2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_final3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_final4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_final5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_final6")
+}],
+"loop": true,
+"name": &"repaired_final",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idle1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idle2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idle3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idle4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idle5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idle6")
+}],
+"loop": true,
+"name": &"repaired_moving",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rez1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rez2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rez3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rez4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rez5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rez6")
+}],
+"loop": true,
+"name": &"wrecked_moving",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trader")
+}],
+"loop": true,
+"name": &"wrecked_static",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05wje"]
+radius = 38.0
+height = 126.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2uqhp"]
+size = Vector2(17, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05wje"]
+size = Vector2(18.500002, 17.5)
+
+[node name="SpeedBoostSubmarine" type="StaticBody2D" unique_id=1302135277]
+z_as_relative = false
+script = ExtResource("1_speed")
+
+[node name="DoneLabel" type="Label" parent="." unique_id=891011122]
+visible = false
+texture_filter = 1
+offset_left = 43.0
+offset_top = -47.0
+offset_right = 125.0
+offset_bottom = -7.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 25
+text = "DONE"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1498669066]
+modulate = Color(0.56, 0.77, 0.9, 1)
+texture_filter = 1
+scale = Vector2(1.9, 1.9)
+sprite_frames = SubResource("SpriteFrames_trader")
+animation = &"repaired_final"
+frame_progress = 0.013894703
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1203516346]
+position = Vector2(8, 10)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_05wje")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=846836159]
+position = Vector2(7.5, -36.5)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_2uqhp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=148047028]
+position = Vector2(-63.25, 9.75)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_05wje")

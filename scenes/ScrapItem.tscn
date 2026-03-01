@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cxscrm7scrap"]
+
+[ext_resource type="Script" path="res://scripts/ScrapItem.gd" id="1_scrap"]
+[ext_resource type="Texture2D" uid="uid://df23wdxg46t3e" path="res://icon.svg" id="2_icon"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scrap"]
+size = Vector2(50, 50)
+
+[node name="ScrapItem" type="Area2D"]
+script = ExtResource("1_scrap")
+value = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.8, 0, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_scrap")

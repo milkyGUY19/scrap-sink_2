@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://cn60oj7pj1oam"]
+
+[ext_resource type="Script" uid="uid://bu7ow36jayuw2" path="res://game_over.gd" id="1_vuicl"]
+[ext_resource type="FontFile" uid="uid://cxknwea7xsam7" path="res://assets/Peaberry-Base.otf" id="2_4noiy"]
+[ext_resource type="Texture2D" uid="uid://cj3krqs4ed8q8" path="res://assets/havarie.png" id="3_gijjb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a1htc"]
+blend_mode = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eksk4"]
+bg_color = Color(0, 0.27058825, 0.43529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xl4ts"]
+bg_color = Color(0.01, 0.3, 0.48, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.29411766, 0.29411766, 0.29411766, 0.81960785)
+shadow_size = 5
+shadow_offset = Vector2(3, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jywu3"]
+bg_color = Color(0, 0.15, 0.25, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.1, 0.1, 0.1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.2, 0.2, 0.2, 0.82)
+shadow_size = 5
+shadow_offset = Vector2(3, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y56u"]
+bg_color = Color(0.015, 0.75, 0.9, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.18, 0.18, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.29, 0.29, 0.29, 0.82)
+shadow_size = 5
+shadow_offset = Vector2(3, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl4ts"]
+atlas = ExtResource("3_gijjb")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jywu3"]
+atlas = ExtResource("3_gijjb")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y56u"]
+atlas = ExtResource("3_gijjb")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua7od"]
+atlas = ExtResource("3_gijjb")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fonj"]
+atlas = ExtResource("3_gijjb")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_758bs"]
+atlas = ExtResource("3_gijjb")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr04i"]
+atlas = ExtResource("3_gijjb")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_067b4"]
+atlas = ExtResource("3_gijjb")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w4h2f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl4ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jywu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y56u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua7od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fonj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_758bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr04i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_067b4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="GameOver" type="Control" unique_id=720368096]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vuicl")
+
+[node name="Panel" type="Panel" parent="." unique_id=827302010]
+material = SubResource("CanvasItemMaterial_a1htc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eksk4")
+
+[node name="Label" type="Label" parent="." unique_id=566043384]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -346.0
+offset_top = 83.0
+offset_right = 346.0
+offset_bottom = 213.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_4noiy")
+theme_override_font_sizes/font_size = 80
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverButtons" type="HBoxContainer" parent="." unique_id=468654482]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -435.0
+offset_top = -205.0
+offset_right = 435.5
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Restart" type="Button" parent="GameOverButtons" unique_id=950428802]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_pressed_color = Color(0.8, 0.95, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_4noiy")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_xl4ts")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jywu3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3y56u")
+text = "RESTART"
+icon_alignment = 1
+
+[node name="Menu" type="Button" parent="GameOverButtons" unique_id=2015570625]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_pressed_color = Color(0.8, 0.95, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_4noiy")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_xl4ts")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jywu3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3y56u")
+text = "RETURN TO MENU"
+icon_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=953606606]
+texture_filter = 1
+position = Vector2(861, 381.00003)
+scale = Vector2(3.8125002, 3.351563)
+sprite_frames = SubResource("SpriteFrames_w4h2f")
+frame_progress = 0.9089053
+
+[connection signal="pressed" from="GameOverButtons/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="GameOverButtons/Menu" to="." method="_on_menu_pressed"]

@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bfi7xr7lncpqn"]
+
+[ext_resource type="Script" uid="uid://dfqybmasqn5e5" path="res://scripts/wave.gd" id="1_sj2kr"]
+[ext_resource type="Texture2D" uid="uid://bx53v23bwf0n4" path="res://assets/vlny_3.png" id="3_j10k6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0o3h"]
+atlas = ExtResource("3_j10k6")
+region = Rect2(0, 0, 126, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sf13h"]
+atlas = ExtResource("3_j10k6")
+region = Rect2(126, 0, 126, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hdkf"]
+atlas = ExtResource("3_j10k6")
+region = Rect2(252, 0, 126, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ntfj"]
+atlas = ExtResource("3_j10k6")
+region = Rect2(378, 0, 126, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxvxo"]
+atlas = ExtResource("3_j10k6")
+region = Rect2(504, 0, 126, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtu3v"]
+atlas = ExtResource("3_j10k6")
+region = Rect2(630, 0, 126, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53yc1"]
+atlas = ExtResource("3_j10k6")
+region = Rect2(756, 0, 126, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qk5ts"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0o3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sf13h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hdkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ntfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxvxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtu3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53yc1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
+[node name="Wave" type="Node2D" unique_id=631824589]
+scale = Vector2(0.39999968, 0.48000047)
+script = ExtResource("1_sj2kr")
+
+[node name="WaveReverse" type="AnimatedSprite2D" parent="." unique_id=2109362261]
+position = Vector2(70.00006, -37.499966)
+sprite_frames = SubResource("SpriteFrames_qk5ts")
+frame_progress = 0.4557303
