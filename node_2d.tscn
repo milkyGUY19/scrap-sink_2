@@ -1,0 +1,1098 @@
+[gd_scene format=3 uid="uid://d35jw5gntvt6o"]
+
+[ext_resource type="Script" uid="uid://c2k4nlfm1ickc" path="res://world.gd" id="1_d2bti"]
+[ext_resource type="PackedScene" uid="uid://bevfu6s8faeyw" path="res://submarine.tscn" id="1_epypp"]
+[ext_resource type="PackedScene" uid="uid://c2d60jpfkvfe5" path="res://scenes/boat.tscn" id="1_hqns4"]
+[ext_resource type="Script" uid="uid://dltbtbdqc0y5u" path="res://scripts/PlayerUI.gd" id="3_zzz"]
+[ext_resource type="FontFile" uid="uid://cxknwea7xsam7" path="res://assets/Peaberry-Base.otf" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://b12xr4s5tjflq" path="res://pause_panel.gd" id="4_d21ai"]
+[ext_resource type="Script" uid="uid://c6gghshxq5p0m" path="res://scripts/CliffGenerator.gd" id="5_cliff"]
+[ext_resource type="Script" uid="uid://wkjp1ejase13" path="res://scripts/options_buttons.gd" id="6_rj586"]
+[ext_resource type="Script" uid="uid://clc3t1bslvo6h" path="res://scripts/audio_manager.gd" id="7_4d7sh"]
+[ext_resource type="PackedScene" uid="uid://bfi7xr7lncpqn" path="res://scenes/wave.tscn" id="10_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://bkfyhxwualuhg" path="res://assets/mrak.png" id="12_x0ka3"]
+[ext_resource type="PackedScene" uid="uid://ppyi0yg5n1c4" path="res://broken_sub.tscn" id="13_nr8wp"]
+[ext_resource type="PackedScene" uid="uid://b8wpx0d677ir3" path="res://scenes/SpeedBoostSubmarine.tscn" id="13_trader"]
+[ext_resource type="Script" uid="uid://drq2fx8rwk7el" path="res://scripts/BackgroundManager.gd" id="14_bgmgr"]
+[ext_resource type="Texture2D" uid="uid://og3h3ejw0j2" path="res://assets/Rasa.png" id="14_d2bti"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
+bg_color = Color(0, 0.27, 0.43, 0.75)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hol4"]
+bg_color = Color(0.01, 0.3, 0.48, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.29411766, 0.29411766, 0.29411766, 0.81960785)
+shadow_size = 5
+shadow_offset = Vector2(3, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
+bg_color = Color(0, 0.15, 0.25, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.1, 0.1, 0.1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.2, 0.2, 0.2, 0.82)
+shadow_size = 5
+shadow_offset = Vector2(3, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d21ai"]
+bg_color = Color(0.015, 0.75, 0.9, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.18, 0.18, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.29, 0.29, 0.29, 0.82)
+shadow_size = 5
+shadow_offset = Vector2(3, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir8iy"]
+bg_color = Color(0.20392157, 0.21960784, 0.2, 0.7607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqns4"]
+bg_color = Color(0.01, 0.3, 0.48, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.29411766, 0.29411766, 0.29411766, 0.81960785)
+shadow_size = 5
+shadow_offset = Vector2(3, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0ka3"]
+bg_color = Color(0, 0.15, 0.25, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.1, 0.1, 0.1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.2, 0.2, 0.2, 0.82)
+shadow_size = 5
+shadow_offset = Vector2(3, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0h7mo"]
+bg_color = Color(0.015, 0.75, 0.9, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.18, 0.18, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.29, 0.29, 0.29, 0.82)
+shadow_size = 5
+shadow_offset = Vector2(3, 4)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_epypp"]
+normal = Vector2(0, 1)
+distance = -1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nr8wp"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ta5nu"]
+bg_color = Color(0.38372943, 0.80103385, 0.99999994, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2bti"]
+bg_color = Color(1, 1, 1, 0.558)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oceanfloor"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta5nu"]
+atlas = ExtResource("14_d2bti")
+region = Rect2(0, 0, 21, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flf07"]
+atlas = ExtResource("14_d2bti")
+region = Rect2(0, 64, 21, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k73cj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flf07"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5nu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rjqkl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fs4d3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5nu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vxoj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nr8wp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5nu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2bti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ta5nu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5nu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="World" type="Node2D" unique_id=908213786]
+script = ExtResource("1_d2bti")
+
+[node name="Boat" parent="." unique_id=1731922496 instance=ExtResource("1_hqns4")]
+position = Vector2(214, 282)
+
+[node name="Submarine" parent="." unique_id=1278720274 instance=ExtResource("1_epypp")]
+position = Vector2(793, 225)
+
+[node name="Camera2D2" type="Camera2D" parent="Submarine" unique_id=981787369]
+position = Vector2(51, -6)
+zoom = Vector2(0.8, 0.8)
+limit_left = 0
+limit_top = -100
+limit_right = 2500
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="PlayerUI" type="CanvasLayer" parent="." unique_id=1702368993 node_paths=PackedStringArray("depth_label", "materials_label", "hp_label", "trades_label")]
+script = ExtResource("3_zzz")
+depth_label = NodePath("MarginContainer/VBoxContainer/DepthLabel")
+materials_label = NodePath("MarginContainer/VBoxContainer/MaterialsLabel")
+hp_label = NodePath("MarginContainer/VBoxContainer/HPLabel")
+trades_label = NodePath("MarginContainer/VBoxContainer/TradesLabel")
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerUI" unique_id=323229580]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/MarginContainer" unique_id=624999049]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HPLabel" type="Label" parent="PlayerUI/MarginContainer/VBoxContainer" unique_id=1395848553]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 24
+text = "HP: 100/100"
+
+[node name="DepthLabel" type="Label" parent="PlayerUI/MarginContainer/VBoxContainer" unique_id=1548798134]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 24
+text = "Depth: 0m"
+
+[node name="MaterialsLabel" type="Label" parent="PlayerUI/MarginContainer/VBoxContainer" unique_id=965483389]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 24
+text = "Loot: 0"
+
+[node name="TradesLabel" type="Label" parent="PlayerUI/MarginContainer/VBoxContainer" unique_id=1418751432]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 24
+text = "Splněno obchodů: 0"
+
+[node name="Pause" type="CanvasLayer" parent="PlayerUI" unique_id=1894569411]
+process_mode = 3
+
+[node name="PausePanel" type="Panel" parent="PlayerUI/Pause" unique_id=743212479]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q6r6c")
+script = ExtResource("4_d21ai")
+
+[node name="GamePaused" type="Label" parent="PlayerUI/Pause/PausePanel" unique_id=276463401]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 64.0
+offset_right = 202.0
+offset_bottom = 124.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 60
+text = "GAME PAUSED"
+
+[node name="PauseButtons" type="VBoxContainer" parent="PlayerUI/Pause/PausePanel" unique_id=1743843268]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -160.0
+offset_right = 199.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="Continue" type="Button" parent="PlayerUI/Pause/PausePanel/PauseButtons" unique_id=1122513645]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.8, 0.95, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hol4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kdubu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d21ai")
+text = "CONTINUE"
+icon_alignment = 1
+
+[node name="Options" type="Button" parent="PlayerUI/Pause/PausePanel/PauseButtons" unique_id=931996380]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.8, 0.95, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hol4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kdubu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d21ai")
+text = "OPTIONS"
+icon_alignment = 1
+
+[node name="Menu" type="Button" parent="PlayerUI/Pause/PausePanel/PauseButtons" unique_id=285054929]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.8, 0.95, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hol4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kdubu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d21ai")
+text = "EXIT TO MENU"
+icon_alignment = 1
+
+[node name="Options" type="Panel" parent="PlayerUI/Pause/PausePanel" unique_id=1277302276]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = -263.0
+offset_right = 292.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ir8iy")
+
+[node name="Label" type="Label" parent="PlayerUI/Pause/PausePanel/Options" unique_id=1288163167]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.0
+offset_top = 39.0
+offset_right = 159.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 40
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsButtons" type="VBoxContainer" parent="PlayerUI/Pause/PausePanel/Options" unique_id=1133040746]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -119.5
+offset_right = 201.0
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_rj586")
+
+[node name="MasterVolume" type="Label" parent="PlayerUI/Pause/PausePanel/Options/OptionsButtons" unique_id=1323542924]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 20
+text = "MASTER VOLUME"
+
+[node name="MasterSlider" type="HSlider" parent="PlayerUI/Pause/PausePanel/Options/OptionsButtons" unique_id=1904591208]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("7_4d7sh")
+audio_bus_name = "Master"
+
+[node name="SFXVolume" type="Label" parent="PlayerUI/Pause/PausePanel/Options/OptionsButtons" unique_id=1014394472]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 20
+text = "SFX VOLUME"
+
+[node name="SFXSlider" type="HSlider" parent="PlayerUI/Pause/PausePanel/Options/OptionsButtons" unique_id=338624847]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("7_4d7sh")
+audio_bus_name = "SFX"
+
+[node name="MusicVolume" type="Label" parent="PlayerUI/Pause/PausePanel/Options/OptionsButtons" unique_id=414762222]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 20
+text = "MUSIC VOLUME"
+
+[node name="MusicSlider" type="HSlider" parent="PlayerUI/Pause/PausePanel/Options/OptionsButtons" unique_id=719936389]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("7_4d7sh")
+audio_bus_name = "Music"
+
+[node name="Fullscreen" type="CheckBox" parent="PlayerUI/Pause/PausePanel/Options/OptionsButtons" unique_id=31387790]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 20
+button_pressed = true
+text = "TOGGLE ON FULLSCREEN"
+
+[node name="Back" type="Button" parent="PlayerUI/Pause/PausePanel/Options" unique_id=250047010]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -84.0
+offset_right = 203.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_pressed_color = Color(0.8, 0.95, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_0hol4")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_hqns4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x0ka3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0h7mo")
+text = "BACK"
+icon_alignment = 1
+
+[node name="LeftCliff" type="Node2D" parent="." unique_id=944756991]
+position = Vector2(52, 3)
+script = ExtResource("5_cliff")
+
+[node name="Trader100" parent="LeftCliff" unique_id=1523412051 instance=ExtResource("13_trader")]
+position = Vector2(420, 10300)
+
+[node name="Trader200" parent="LeftCliff" unique_id=1749714372 instance=ExtResource("13_trader")]
+position = Vector2(420, 20300)
+
+[node name="Trader400" parent="LeftCliff" unique_id=1778866283 instance=ExtResource("13_trader")]
+position = Vector2(420, 40300)
+
+[node name="Trader600" parent="LeftCliff" unique_id=1810286715 instance=ExtResource("13_trader")]
+position = Vector2(420, 60300)
+
+[node name="Trader900" parent="LeftCliff" unique_id=948287571 instance=ExtResource("13_trader")]
+position = Vector2(420, 90300)
+
+[node name="Trader1200" parent="LeftCliff" unique_id=723119949 instance=ExtResource("13_trader")]
+position = Vector2(420, 120300)
+
+[node name="RightCliff" type="Node2D" parent="." unique_id=1862698052]
+position = Vector2(2431, 0)
+script = ExtResource("5_cliff")
+is_right_side = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=402614364]
+position = Vector2(324, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1234456011]
+position = Vector2(569, 271)
+shape = SubResource("WorldBoundaryShape2D_epypp")
+
+[node name="Waves" type="Node" parent="." unique_id=1396237348]
+
+[node name="Wave1" parent="Waves" unique_id=631824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(52, 334)
+
+[node name="Wave2" parent="Waves" unique_id=731824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(96.00001, 334)
+
+[node name="Wave3" parent="Waves" unique_id=831824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(139.00002, 334)
+
+[node name="Wave4" parent="Waves" unique_id=931824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(182.00002, 334)
+
+[node name="Wave5" parent="Waves" unique_id=1031824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(225, 334)
+
+[node name="Wave6" parent="Waves" unique_id=1131824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(269, 334)
+
+[node name="Wave7" parent="Waves" unique_id=1231824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(312, 334)
+
+[node name="Wave8" parent="Waves" unique_id=1331824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(353, 334)
+
+[node name="Wave9" parent="Waves" unique_id=1431824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(397.00003, 334)
+
+[node name="Wave10" parent="Waves" unique_id=1531824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(441.00003, 334)
+
+[node name="Wave11" parent="Waves" unique_id=1631824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(485, 334)
+
+[node name="Wave12" parent="Waves" unique_id=1731824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(529.00006, 334)
+
+[node name="Wave13" parent="Waves" unique_id=1831824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(572, 334)
+
+[node name="Wave14" parent="Waves" unique_id=1931824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(615.00006, 334)
+
+[node name="Wave15" parent="Waves" unique_id=2031824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(659.00006, 334)
+
+[node name="Wave16" parent="Waves" unique_id=2131824589 instance=ExtResource("10_ir8iy")]
+position = Vector2(702, 334)
+
+[node name="Wave17" parent="Waves" unique_id=-2063142707 instance=ExtResource("10_ir8iy")]
+position = Vector2(744.00006, 334)
+
+[node name="Wave18" parent="Waves" unique_id=-1963142707 instance=ExtResource("10_ir8iy")]
+position = Vector2(787, 334)
+
+[node name="Wave19" parent="Waves" unique_id=-1863142707 instance=ExtResource("10_ir8iy")]
+position = Vector2(831, 334)
+
+[node name="Wave20" parent="Waves" unique_id=-1763142707 instance=ExtResource("10_ir8iy")]
+position = Vector2(875.00006, 334)
+
+[node name="Wave21" parent="Waves" unique_id=-1663142707 instance=ExtResource("10_ir8iy")]
+position = Vector2(919, 334)
+
+[node name="Wave22" parent="Waves" unique_id=-1563142707 instance=ExtResource("10_ir8iy")]
+position = Vector2(963, 334)
+
+[node name="Wave23" parent="Waves" unique_id=1440049479 instance=ExtResource("10_ir8iy")]
+position = Vector2(1006.00006, 334)
+
+[node name="Wave24" parent="Waves" unique_id=751647050 instance=ExtResource("10_ir8iy")]
+position = Vector2(1050.0001, 334)
+
+[node name="Wave25" parent="Waves" unique_id=1230544466 instance=ExtResource("10_ir8iy")]
+position = Vector2(1094, 334)
+
+[node name="Wave26" parent="Waves" unique_id=250540447 instance=ExtResource("10_ir8iy")]
+position = Vector2(1138.0001, 334)
+
+[node name="Wave27" parent="Waves" unique_id=832302312 instance=ExtResource("10_ir8iy")]
+position = Vector2(1182, 334)
+
+[node name="Wave28" parent="Waves" unique_id=1414935682 instance=ExtResource("10_ir8iy")]
+position = Vector2(1226.0001, 334)
+
+[node name="Wave29" parent="Waves" unique_id=188438005 instance=ExtResource("10_ir8iy")]
+position = Vector2(1270.0001, 334)
+
+[node name="Wave30" parent="Waves" unique_id=1722457607 instance=ExtResource("10_ir8iy")]
+position = Vector2(1313.0001, 334)
+
+[node name="Wave31" parent="Waves" unique_id=1070063620 instance=ExtResource("10_ir8iy")]
+position = Vector2(1357.0001, 334)
+
+[node name="Wave32" parent="Waves" unique_id=1547628524 instance=ExtResource("10_ir8iy")]
+position = Vector2(1399, 334)
+
+[node name="Wave33" parent="Waves" unique_id=587547337 instance=ExtResource("10_ir8iy")]
+position = Vector2(1443.0001, 334)
+
+[node name="Wave34" parent="Waves" unique_id=2112526232 instance=ExtResource("10_ir8iy")]
+position = Vector2(1487, 334)
+
+[node name="Wave35" parent="Waves" unique_id=1229049238 instance=ExtResource("10_ir8iy")]
+position = Vector2(1530.0001, 334)
+
+[node name="Wave36" parent="Waves" unique_id=449296108 instance=ExtResource("10_ir8iy")]
+position = Vector2(1574.0001, 334)
+
+[node name="Wave37" parent="Waves" unique_id=1950548075 instance=ExtResource("10_ir8iy")]
+position = Vector2(1618, 334)
+
+[node name="Wave38" parent="Waves" unique_id=1841207508 instance=ExtResource("10_ir8iy")]
+position = Vector2(1662.0001, 334)
+
+[node name="Wave39" parent="Waves" unique_id=1605106554 instance=ExtResource("10_ir8iy")]
+position = Vector2(1705.0001, 334)
+
+[node name="Wave40" parent="Waves" unique_id=2032163957 instance=ExtResource("10_ir8iy")]
+position = Vector2(1748.0001, 334)
+
+[node name="Wave41" parent="Waves" unique_id=1723498432 instance=ExtResource("10_ir8iy")]
+position = Vector2(1791.0002, 334)
+
+[node name="Wave42" parent="Waves" unique_id=1044063453 instance=ExtResource("10_ir8iy")]
+position = Vector2(1835, 334)
+
+[node name="Wave43" parent="Waves" unique_id=553537762 instance=ExtResource("10_ir8iy")]
+position = Vector2(1876.9999, 334)
+
+[node name="Wave44" parent="Waves" unique_id=550192560 instance=ExtResource("10_ir8iy")]
+position = Vector2(1921, 334)
+
+[node name="Wave45" parent="Waves" unique_id=914106789 instance=ExtResource("10_ir8iy")]
+position = Vector2(1964.9999, 334)
+
+[node name="Wave46" parent="Waves" unique_id=1459267260 instance=ExtResource("10_ir8iy")]
+position = Vector2(2008, 334)
+
+[node name="Wave47" parent="Waves" unique_id=1835776453 instance=ExtResource("10_ir8iy")]
+position = Vector2(2052, 334)
+
+[node name="Wave48" parent="Waves" unique_id=730505793 instance=ExtResource("10_ir8iy")]
+position = Vector2(2096, 334)
+
+[node name="Wave49" parent="Waves" unique_id=2027152244 instance=ExtResource("10_ir8iy")]
+position = Vector2(2140, 334)
+
+[node name="Wave50" parent="Waves" unique_id=1122847898 instance=ExtResource("10_ir8iy")]
+position = Vector2(2183, 334)
+
+[node name="Wave51" parent="Waves" unique_id=2147302263 instance=ExtResource("10_ir8iy")]
+position = Vector2(2226, 334)
+
+[node name="Wave52" parent="Waves" unique_id=1546491078 instance=ExtResource("10_ir8iy")]
+position = Vector2(2269, 334)
+
+[node name="Wave53" parent="Waves" unique_id=1205856052 instance=ExtResource("10_ir8iy")]
+position = Vector2(2313.0002, 334)
+
+[node name="Wave54" parent="Waves" unique_id=13359148 instance=ExtResource("10_ir8iy")]
+position = Vector2(2357, 334)
+
+[node name="Wave55" parent="Waves" unique_id=1491447218 instance=ExtResource("10_ir8iy")]
+position = Vector2(2379.0002, 333)
+
+[node name="Background" type="Control" parent="." unique_id=1047151097]
+z_index = -5
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = 330.0
+offset_right = 2426.0
+offset_bottom = 165000.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("14_bgmgr")
+
+[node name="WaterTop" type="Panel" parent="Background" unique_id=238806450]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 144.0
+offset_bottom = -4855.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nr8wp")
+
+[node name="Sky" type="Panel" parent="Background" unique_id=2139525933]
+layout_mode = 0
+offset_left = -103.0
+offset_top = -430.0
+offset_right = 2531.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ta5nu")
+
+[node name="Cloud" type="Node" parent="Background/Sky" unique_id=435448623]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Sky/Cloud" unique_id=1600520232]
+position = Vector2(84, -6.9999924)
+scale = Vector2(0.373366, 0.40865386)
+texture = ExtResource("12_x0ka3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background/Sky/Cloud" unique_id=1751989479]
+position = Vector2(322.99997, 123)
+scale = Vector2(0.47630718, 0.53846157)
+texture = ExtResource("12_x0ka3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Background/Sky/Cloud" unique_id=1016355119]
+position = Vector2(599, 32.000004)
+scale = Vector2(0.38194436, 0.4266827)
+texture = ExtResource("12_x0ka3")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Background/Sky/Cloud" unique_id=135806511]
+position = Vector2(918.99994, 175)
+scale = Vector2(0.507353, 0.56490386)
+texture = ExtResource("12_x0ka3")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Background/Sky/Cloud" unique_id=513423394]
+position = Vector2(1445.125, 54.75002)
+scale = Vector2(0.5657678, 0.5805289)
+texture = ExtResource("12_x0ka3")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Background/Sky/Cloud" unique_id=363053485]
+position = Vector2(1587.0001, 104.500015)
+scale = Vector2(0.44689542, 0.46394232)
+texture = ExtResource("12_x0ka3")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Background/Sky/Cloud" unique_id=1419950038]
+position = Vector2(1924.9999, 179)
+scale = Vector2(0.41339874, 0.4423077)
+texture = ExtResource("12_x0ka3")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Background/Sky/Cloud" unique_id=1492464261]
+position = Vector2(2093, -45)
+scale = Vector2(0.41339874, 0.4423077)
+texture = ExtResource("12_x0ka3")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Background/Sky/Cloud" unique_id=1236048179]
+position = Vector2(2342.625, 123.24999)
+scale = Vector2(0.5085787, 0.6286058)
+texture = ExtResource("12_x0ka3")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Background/Sky/Cloud" unique_id=141962015]
+position = Vector2(962.00006, -39)
+scale = Vector2(0.41339874, 0.4423077)
+texture = ExtResource("12_x0ka3")
+
+[node name="WaterTopUnderwater" type="Panel" parent="." unique_id=832426152]
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = 323.0
+offset_right = 2683.0
+offset_bottom = 160140.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d2bti")
+
+[node name="OceanFloor" type="StaticBody2D" parent="." unique_id=314159265]
+position = Vector2(-11, 159996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OceanFloor" unique_id=314159266]
+shape = SubResource("WorldBoundaryShape2D_oceanfloor")
+
+[node name="BrokenSub" parent="." unique_id=647885702 instance=ExtResource("13_nr8wp")]
+position = Vector2(1432, 159922)
+
+[node name="SeaWeed" type="Node2D" parent="." unique_id=1311327921]
+
+[node name="SeaWeed1" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1844566013]
+texture_filter = 1
+position = Vector2(1907.375, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.07915202
+
+[node name="SeaWeed2" type="AnimatedSprite2D" parent="SeaWeed" unique_id=2395182]
+texture_filter = 1
+position = Vector2(1835.375, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed3" type="AnimatedSprite2D" parent="SeaWeed" unique_id=483225365]
+texture_filter = 1
+position = Vector2(1756.375, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed4" type="AnimatedSprite2D" parent="SeaWeed" unique_id=147334758]
+texture_filter = 1
+position = Vector2(1700.3748, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed5" type="AnimatedSprite2D" parent="SeaWeed" unique_id=2003969703]
+texture_filter = 1
+position = Vector2(1656.375, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed6" type="AnimatedSprite2D" parent="SeaWeed" unique_id=633733662]
+texture_filter = 1
+position = Vector2(483.37494, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed15" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1375959248]
+texture_filter = 1
+position = Vector2(388, 159851)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_flf07")
+
+[node name="SeaWeed16" type="AnimatedSprite2D" parent="SeaWeed" unique_id=234346891]
+texture_filter = 1
+position = Vector2(324.99997, 159851)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_rjqkl")
+
+[node name="SeaWeed17" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1504627779]
+texture_filter = 1
+position = Vector2(284, 159851)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_rjqkl")
+
+[node name="SeaWeed18" type="AnimatedSprite2D" parent="SeaWeed" unique_id=785979739]
+texture_filter = 1
+position = Vector2(212, 159851)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_rjqkl")
+
+[node name="SeaWeed7" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1224406105]
+texture_filter = 1
+position = Vector2(541.37494, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed8" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1283727787]
+texture_filter = 1
+position = Vector2(615.37494, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed9" type="AnimatedSprite2D" parent="SeaWeed" unique_id=876568088]
+texture_filter = 1
+position = Vector2(722.37494, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed10" type="AnimatedSprite2D" parent="SeaWeed" unique_id=848682315]
+texture_filter = 1
+position = Vector2(703.375, 159900.5)
+scale = Vector2(3.9226124, 4.67975)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed19" type="AnimatedSprite2D" parent="SeaWeed" unique_id=659297564]
+texture_filter = 1
+position = Vector2(412.00003, 159901)
+scale = Vector2(3.9226124, 4.67975)
+sprite_frames = SubResource("SpriteFrames_fs4d3")
+
+[node name="SeaWeed20" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1539560888]
+texture_filter = 1
+position = Vector2(190, 159901)
+scale = Vector2(3.9226124, 4.67975)
+sprite_frames = SubResource("SpriteFrames_7vxoj")
+
+[node name="SeaWeed11" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1294309233]
+texture_filter = 1
+position = Vector2(647.37494, 159900.5)
+scale = Vector2(3.9226124, 4.67975)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+frame_progress = 0.1346499
+
+[node name="SeaWeed12" type="AnimatedSprite2D" parent="SeaWeed" unique_id=338404557]
+texture_filter = 1
+position = Vector2(1814.375, 159900.5)
+scale = Vector2(3.9226124, 4.67975)
+sprite_frames = SubResource("SpriteFrames_d2bti")
+
+[node name="SeaWeed13" type="AnimatedSprite2D" parent="SeaWeed" unique_id=882181882]
+texture_filter = 1
+position = Vector2(2003.3749, 159900.5)
+scale = Vector2(3.9226124, 4.67975)
+sprite_frames = SubResource("SpriteFrames_d2bti")
+
+[node name="SeaWeed14" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1158084465]
+texture_filter = 1
+position = Vector2(1936.3749, 159900.5)
+scale = Vector2(3.9226124, 4.67975)
+sprite_frames = SubResource("SpriteFrames_ta5nu")
+
+[node name="SeaWeed22" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1586938975]
+texture_filter = 1
+position = Vector2(2180.375, 159849.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed23" type="AnimatedSprite2D" parent="SeaWeed" unique_id=2009462133]
+texture_filter = 1
+position = Vector2(2101.375, 159849.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed24" type="AnimatedSprite2D" parent="SeaWeed" unique_id=956712761]
+texture_filter = 1
+position = Vector2(2045.3749, 159849.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed25" type="AnimatedSprite2D" parent="SeaWeed" unique_id=2024841170]
+texture_filter = 1
+position = Vector2(2159.375, 159899.5)
+scale = Vector2(3.9226124, 4.67975)
+sprite_frames = SubResource("SpriteFrames_d2bti")
+
+[node name="SeaWeed21" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1779750242]
+texture_filter = 1
+position = Vector2(779.37494, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed26" type="AnimatedSprite2D" parent="SeaWeed" unique_id=675073394]
+texture_filter = 1
+position = Vector2(837.37494, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed27" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1781533214]
+texture_filter = 1
+position = Vector2(911.37494, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed28" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1361756406]
+texture_filter = 1
+position = Vector2(1018.37494, 159850.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed29" type="AnimatedSprite2D" parent="SeaWeed" unique_id=95383128]
+texture_filter = 1
+position = Vector2(999.375, 159900.5)
+scale = Vector2(3.9226124, 4.67975)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+frame_progress = 0.5127775
+
+[node name="SeaWeed30" type="AnimatedSprite2D" parent="SeaWeed" unique_id=371318345]
+texture_filter = 1
+position = Vector2(943.3749, 159900.5)
+scale = Vector2(3.9226124, 4.67975)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+frame_progress = 0.1346499
+
+[node name="SeaWeed31" type="AnimatedSprite2D" parent="SeaWeed" unique_id=130216593]
+texture_filter = 1
+position = Vector2(1212.3749, 159851.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_flf07")
+
+[node name="SeaWeed32" type="AnimatedSprite2D" parent="SeaWeed" unique_id=392689352]
+texture_filter = 1
+position = Vector2(1143, 159851.02)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_rjqkl")
+
+[node name="SeaWeed33" type="AnimatedSprite2D" parent="SeaWeed" unique_id=310515474]
+texture_filter = 1
+position = Vector2(1082.1875, 159851.5)
+scale = Vector2(4.226184, 7.0780544)
+sprite_frames = SubResource("SpriteFrames_rjqkl")
+
+[node name="SeaWeed34" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1908345968]
+texture_filter = 1
+position = Vector2(1236.3748, 159901.5)
+scale = Vector2(3.9226124, 4.67975)
+sprite_frames = SubResource("SpriteFrames_fs4d3")
+
+[node name="SeaWeed35" type="AnimatedSprite2D" parent="SeaWeed" unique_id=1750692818]
+texture_filter = 1
+position = Vector2(1060.1874, 159901.5)
+scale = Vector2(3.9226124, 4.67975)
+sprite_frames = SubResource("SpriteFrames_7vxoj")
+
+[connection signal="pressed" from="PlayerUI/Pause/PausePanel/PauseButtons/Continue" to="PlayerUI/Pause/PausePanel" method="_on_continue_pressed"]
+[connection signal="pressed" from="PlayerUI/Pause/PausePanel/PauseButtons/Options" to="PlayerUI/Pause/PausePanel" method="_on_options_pressed"]
+[connection signal="pressed" from="PlayerUI/Pause/PausePanel/PauseButtons/Menu" to="PlayerUI/Pause/PausePanel" method="_on_menu_pressed"]
+[connection signal="toggled" from="PlayerUI/Pause/PausePanel/Options/OptionsButtons/Fullscreen" to="PlayerUI/Pause/PausePanel/Options/OptionsButtons" method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="PlayerUI/Pause/PausePanel/Options/Back" to="PlayerUI/Pause/PausePanel" method="_on_back_pressed"]

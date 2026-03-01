@@ -1,0 +1,227 @@
+[gd_scene format=3 uid="uid://lqnj681htvi5"]
+
+[ext_resource type="FontFile" uid="uid://cxknwea7xsam7" path="res://assets/Peaberry-Base.otf" id="Font_peaberry"]
+[ext_resource type="Script" uid="uid://drs3ve5g2bj2t" path="res://scripts/main_menu.gd" id="Script_main_menu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_panel_main"]
+bg_color = Color(0.36975756, 0.5131424, 0.8725283, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7a2f"]
+bg_color = Color(8.085966e-06, 0.66958594, 0.87921125, 0.8039216)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.29411766, 0.29411766, 0.29411766, 0.81960785)
+shadow_size = 5
+shadow_offset = Vector2(3, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eiy7p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_panel_options"]
+bg_color = Color(0.20204967, 0.21808627, 0.19804066, 0.7607843)
+
+[node name="MainMenu" type="Control" unique_id=373863426]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("Script_main_menu")
+
+[node name="Panel" type="Panel" parent="." unique_id=1061486288]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBox_panel_main")
+
+[node name="MainMenuButtons" type="VBoxContainer" parent="." unique_id=1213983990]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -122.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="Start" type="Button" parent="MainMenuButtons" unique_id=1282163817]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("Font_peaberry")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_h7a2f")
+text = "START"
+icon_alignment = 1
+
+[node name="Options" type="Button" parent="MainMenuButtons" unique_id=1436794756]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("Font_peaberry")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_h7a2f")
+text = "OPTIONS"
+icon_alignment = 1
+
+[node name="Exit" type="Button" parent="MainMenuButtons" unique_id=1429964377]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("Font_peaberry")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_h7a2f")
+text = "EXIT"
+icon_alignment = 1
+
+[node name="GameName" type="Panel" parent="." unique_id=158569611]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -269.0
+offset_top = 75.0
+offset_right = 282.0
+offset_bottom = 174.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eiy7p")
+
+[node name="Label" type="Label" parent="GameName" unique_id=203007442]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "SCRAP & SINK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="Panel" parent="." unique_id=1202753822]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = -263.0
+offset_right = 292.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBox_panel_options")
+
+[node name="Label" type="Label" parent="Options" unique_id=1007726125]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.0
+offset_top = 39.0
+offset_right = 159.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("Font_peaberry")
+theme_override_font_sizes/font_size = 40
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsButtons" type="VBoxContainer" parent="Options" unique_id=2100121036]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -119.5
+offset_right = 201.0
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MasterVolume" type="Label" parent="Options/OptionsButtons" unique_id=78434734]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("Font_peaberry")
+theme_override_font_sizes/font_size = 20
+text = "MASTER VOLUME"
+
+[node name="HSlider" type="HSlider" parent="Options/OptionsButtons" unique_id=953577853]
+layout_mode = 2
+
+[node name="SFXVolume" type="Label" parent="Options/OptionsButtons" unique_id=488447833]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("Font_peaberry")
+theme_override_font_sizes/font_size = 20
+text = "SFX VOLUME"
+
+[node name="HSlider2" type="HSlider" parent="Options/OptionsButtons" unique_id=1421127878]
+layout_mode = 2
+
+[node name="MusicVolume" type="Label" parent="Options/OptionsButtons" unique_id=1603770758]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("Font_peaberry")
+theme_override_font_sizes/font_size = 20
+text = "MUSIC VOLUME"
+
+[node name="HSlider3" type="HSlider" parent="Options/OptionsButtons" unique_id=85963427]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Options/OptionsButtons" unique_id=1022748645]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("Font_peaberry")
+theme_override_font_sizes/font_size = 20
+text = "TOGGLE ON FULLSCREEN"
+
+[node name="Back" type="Button" parent="Options" unique_id=2111139160]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -84.0
+offset_right = 203.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("Font_peaberry")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_h7a2f")
+text = "BACK"
+icon_alignment = 1
+
+[connection signal="pressed" from="MainMenuButtons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenuButtons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MainMenuButtons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]

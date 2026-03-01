@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://bevfu6s8faeyw"]
+
+[ext_resource type="Script" uid="uid://bqth8o3kost7e" path="res://scripts/Submarine.gd" id="1_qvldv"]
+[ext_resource type="Script" uid="uid://cgc6ypy47ukj2" path="res://scripts/HealthComponent.gd" id="2_wxksq"]
+[ext_resource type="Texture2D" uid="uid://cpga1o050ic4e" path="res://assets/submarine_3.png" id="3_wxksq"]
+[ext_resource type="Texture2D" uid="uid://dwok5gsomgjsy" path="res://assets/submarine_1.png" id="4_a2b0v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2y6f"]
+atlas = ExtResource("3_wxksq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8e5i"]
+atlas = ExtResource("3_wxksq")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vve82"]
+atlas = ExtResource("3_wxksq")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bejh6"]
+atlas = ExtResource("3_wxksq")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lct8s"]
+atlas = ExtResource("3_wxksq")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ee1q"]
+atlas = ExtResource("3_wxksq")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgmnj"]
+atlas = ExtResource("4_a2b0v")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug1i2"]
+atlas = ExtResource("4_a2b0v")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t3c1"]
+atlas = ExtResource("4_a2b0v")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahspv"]
+atlas = ExtResource("4_a2b0v")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4pi2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2y6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8e5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vve82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bejh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lct8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ee1q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgmnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug1i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t3c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahspv")
+}],
+"loop": true,
+"name": &"movement",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wxksq"]
+radius = 39.999596
+height = 129.99869
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2b0v"]
+size = Vector2(16.495394, 42.99956)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxksq"]
+size = Vector2(16.495394, 18.49531)
+
+[node name="Submarine" type="CharacterBody2D" unique_id=1278720274]
+script = ExtResource("1_qvldv")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=403481900]
+script = ExtResource("2_wxksq")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=2087301720]
+texture_filter = 1
+position = Vector2(102.00001, 91)
+scale = Vector2(1.9492188, 1.9296876)
+sprite_frames = SubResource("SpriteFrames_o4pi2")
+animation = &"movement"
+frame_progress = 0.21063034
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1340881943]
+position = Vector2(94, 103.00001)
+rotation = 1.5752863
+shape = SubResource("CapsuleShape2D_wxksq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1186426901]
+position = Vector2(94.00338, 55.247795)
+rotation = 1.5752863
+shape = SubResource("RectangleShape2D_a2b0v")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1219954450]
+position = Vector2(166.748, 101.94499)
+rotation = 1.5752863
+shape = SubResource("RectangleShape2D_wxksq")
